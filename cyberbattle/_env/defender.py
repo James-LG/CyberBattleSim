@@ -54,6 +54,13 @@ class ScanAndReimageCompromisedMachines(DefenderAgent):
                         else:
                             logging.info(f"Defender detected malware, but node cannot be reimaged {node_id}")
 
+class ShittyDefender(DefenderAgent):
+    """A crap defender to test things out."""
+    def __init__(self) -> None:
+        pass
+    def step(self, environment: Environment, actions: DefenderAgentActions, current_step: int):
+        print(f"{environment.network.nodes} At step {current_step}")
+
 
 class ExternalRandomEvents(DefenderAgent):
     """A 'defender' that randomly alters network node configuration"""
